@@ -1,0 +1,68 @@
+package Star.bro;
+
+/*對於相同類似的功能方法來說，因為參數列表不一樣，卻要記住這麼多不同方法名稱，太麻煩，也要記住太多的方法名稱。
+方法重載(Overload):多個方法的名稱一樣，但參數列不同。
+好處，只需要記住一個方法名稱就能夠使用多個參數。
+
+方法重載與下列因素相關使用
+1.參數個數不同
+2.參數類型不同
+3.參數的多類型順序不同
+
+方法重載與下列因素不相關使用
+1.與參數的名稱無關
+2.與返回值類型無關
+
+
+public class MethodOverload {
+    public static void main(String[] args) {
+    
+        /*System.out.println(onemethod(10, 20));
+        System.out.println(twomethod(10, 20,   30));
+        System.out.println(threemethod(10, 20, 30, 40));*/
+
+
+        System.out.println(method(10, 20));//第一個參數方法
+        System.out.println(method(50, 60, 70));//第二個參數方法
+    }
+
+    public static int method(int a, int b) {
+        return a + b;
+
+    }
+
+    public static int method(int a, int b, int c) {
+        return a + b + c;
+    }
+
+    public static int method(int a, int b, int c, int d) {
+        return a + b + c + d;
+
+    }
+
+    //參數類型不同也能使用重載
+    public static int method(double a, double b) {
+
+        return (int) (a + b);
+
+    }
+
+    public static int method(int a, double b) {
+
+        return (int) (a + b);
+
+    }
+
+/*與參數名稱無關 因為這樣他不知道是要給x還是a
+  public static int method(int x, double y) {
+
+        return (int) (x + y);
+
+    }*/
+/*與返回類型無關
+  public static double method(double x, double y) {
+
+        return a + b ;
+
+    }*/
+}
